@@ -110,22 +110,21 @@ public class ControladorLibros {
 
     public static void imprimirLibros(ArrayList<Libro> libros) {
         System.out.println(
-                "+-----+----------+----------------------------------------+------------------------------------------------------------+");
-        System.out.printf("|%-5s|%-10s|%-40s|%-40s|\n", "No", "Codigo", "Titulo", "Autor",
-                "Disponible");
+                "+-----+----------+----------------------------------------+----------------------------------------+-------------+");
+        System.out.printf("|%-5s|%-10s|%-40s|%-40s|%-13s|\n", "No", "Codigo", "Titulo", "Autor", "Disponible");
         System.out.println(
-                "+-----+----------+----------------------------------------+------------------------------------------------------------+");
-
+                "+-----+----------+----------------------------------------+----------------------------------------+-------------+");
+    
         for (int x = 0; x < libros.size(); x++) {
             Libro libro = libros.get(x);
-            System.out.printf("|%-5d|%-10s|%-40s|%-40s|\n", x + 1, libro.getCodigo(),
+            System.out.printf("|%-5d|%-10s|%-40s|%-40s|%-13s|\n", x + 1, libro.getCodigo(),
                     libro.getTitulo(),
                     libro.getAutor(), libro.isDisponible() ? "Si" : "No");
             System.out.println(
-                    "+-----+----------+----------------------------------------+------------------------------------------------------------+");
+                    "+-----+----------+----------------------------------------+----------------------------------------+-------------+");
         }
     }
-
+    
     public static Libro imprimirLibrosYPedirSeleccion() {
         ArrayList<Libro> libros = ControladorLibros.obtener();
         Scanner sc = new Scanner(System.in);
