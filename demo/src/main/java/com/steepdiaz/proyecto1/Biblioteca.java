@@ -9,7 +9,7 @@ public class Biblioteca {
         String eleccion = "";
         while (!eleccion.equals("9")) {
             System.out.println(
-                    "1. Registrar usuario\n2. Registrar Libro\n3. Registrar Prestamo\n4. Ver Libros\n7. Salir\nElige:");
+                    "1. Registrar usuario\n2. Registrar Libro\n3. Registrar Prestamo\n4. Consultar Libros\n5. Consultar Usaurios\n6. Salir\nElige:");
             eleccion = sc.nextLine();
             if (eleccion.equals("1")) {
                 ControladorUsuarios.solicitarDatosParaRegistrar();
@@ -23,7 +23,10 @@ public class Biblioteca {
             if (eleccion.equals("4")) {
                 ControladorLibros.imprimirLibros(ControladorLibros.obtener());
             }
-            if (eleccion.equals("7")) {
+            if (eleccion.equals("5")) {
+                ControladorUsuarios.imprimirUsuarios(ControladorUsuarios.obtener());
+            }
+            if (eleccion.equals("6")) {
                 System.exit(0);
             }
 
